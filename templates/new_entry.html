@@ -1,0 +1,28 @@
+<html>
+<head>
+	<title>Blog</title>
+	<link type='text/css' rel='stylesheet' href='/css/new_entry.css'/>
+    <link type='text/css' rel='stylesheet' href='/css/body.css'/>
+</head>
+<body>
+	<form method='POST'>
+		<table>
+			<tr>
+				<td>Title</td>
+				<td><input type='text' name='subject' value='{{title}}'></input></td>
+			</tr>
+			<tr>
+				<td>Content</td>
+				<td><textarea name='content'>{{content}}</textarea></td>
+			</tr>
+			<tr>
+				<td colspan='2'><input type='submit'/></td>
+			</tr>
+			<tr>
+				<td colspan='2'>{{error}}</td>
+			</tr>
+		</table>
+	</form>
+</body>
+
+</html>
