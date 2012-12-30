@@ -3,3 +3,12 @@ body {
     margin: 20 auto;
     width: 400px;
 }
+
+a#header-title {
+    font-size: 32;
+    font-family: "Courier New";
+    text-decoration: none;
+    color: #23c9ff;
+    left: 50%;
+    position: relative;
+}

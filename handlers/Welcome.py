@@ -4,4 +4,8 @@ __author__ = 'ssav'
 
 class Welcome(Handler):
     def get(self):
-        self.render('welcome.html', user = self.request.cookies.get('name'))
+        username = self.read_secure_cookie('name')
+        if username:
+            self.render('welcome.html', user = username)
+        else:
+            self.redirect('/signup')

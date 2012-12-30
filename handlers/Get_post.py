@@ -5,7 +5,9 @@ __author__ = 'ssav'
 
 class Get_post(Handler):
     def get(self):
-        path = self.request.path_info
-        path = path.replace('/blog/id/', '')
-        entry = Post.get_by_id(int(path))
-        self.render('post.html', entry=entry, path=path)
+        id = self.request.path_info.replace('/blog/id/', '').replace('.json', '')
+        entry = Post.get_by_id(int(id))
+        if self.format == 'html':
+            self.render('post.html', entry=entry, id=id)
+        else:
+            self.render_json(entry.as_dict())
