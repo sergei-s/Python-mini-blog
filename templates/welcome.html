@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Welcome</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}Welcome{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
 Welcome, {{user}}
-</body>
-</html>
+{% endblock %}

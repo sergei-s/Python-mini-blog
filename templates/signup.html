@@ -1,10 +1,11 @@
-<html>
-<head>
-	<title>Sign up</title>
-	<link type='text/css' rel='stylesheet' href='/css/signup.css'/>
-    <link type='text/css' rel='stylesheet' href='/css/body.css'/>
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}Sign Up{% endblock %}
+{% block head %}
+    {{ super() }}
+    <link type='text/css' rel='stylesheet' href='/css/signup.css'/>
+{% endblock %}
+
+{% block content %}
 	<form method="POST">
 		<table>
 			<tr>
@@ -32,6 +33,4 @@
 			</tr>
 		</table>
 	</form>
-</body>
-
-</html>
+{% endblock %}

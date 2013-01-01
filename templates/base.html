@@ -1,0 +1,14 @@
+<html>
+<!DOCTYPE html>
+<head>
+    {% block head %}
+        <link type='text/css' rel='stylesheet' href='/css/base.css'/>
+        <title>{% block title %}{% endblock %}</title>
+        <a href="/blog" id="header-title">Blog by me</a>
+    {% endblock %}
+</head>
+<body>
+    {% block content %}{% endblock %}
+    <p id="footer">{% block footer %}{% endblock %}</p>
+</body>
+</html>

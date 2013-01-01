@@ -7,11 +7,11 @@ from handlers.New_entry import New_entry
 from handlers.Signup import Signup
 from handlers.Welcome import Welcome
 
-app = webapp2.WSGIApplication([('/blog(?:.json)?', Blog),
-                               ('/blog/newpost', New_entry),
-                               ('/blog/id/.*', Get_post),
-                               ('/signup', Signup),
-                               ('/blog/welcome', Welcome),
-                               ('/login', Login),
-                               ('/logout', Logout)],
+app = webapp2.WSGIApplication([('/blog(?:.json)?/?', Blog),
+                               ('/blog/newpost/?', New_entry),
+                               ('/blog/id/.*/?(?:.json)?', Get_post),
+                               ('/signup/?', Signup),
+                               ('/blog/welcome/?', Welcome),
+                               ('/login/?', Login),
+                               ('/logout/?', Logout)],
                                debug=True)

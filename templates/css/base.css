@@ -12,3 +12,10 @@ a#header-title {
     left: 50%;
     position: relative;
 }
+
+p#footer {
+    left: 100%;
+    position: relative;
+    font-size: 10;
+    color: #a9a9a9;
+}

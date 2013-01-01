@@ -1,16 +1,18 @@
-<html>
-<head>
-	<title>Blog</title>
-	<link type='text/css' rel='stylesheet' href='/css/blog.css'/>
-    <link type='text/css' rel='stylesheet' href='/css/body.css'/>
-</head>
-<body>
-    <a href="/blog" id="header-title">Blog by me</a>
+{% extends "base.html" %}
+{% block title %}Blog{% endblock %}
+{% block head %}
+    {{ super() }}
+    <link type='text/css' rel='stylesheet' href='/css/blog.css'/>
+{% endblock %}
+
+{% block content %}
 	{% for entry in entries%}
 	<div class='title'><h1><a href="blog/id/{{entry.key().id()}}">{{entry.title}}</a></h1></div>
 	<pre class='content'>{{entry.content}}</pre>
 	<br>
 	{%endfor%}
-</body>
+{% endblock %}
 
-</html>
+{% block footer %}
+    This page was last queried {{seconds_ago}} seconds ago
+{% endblock %}

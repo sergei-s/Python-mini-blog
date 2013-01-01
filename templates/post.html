@@ -1,16 +1,14 @@
-<html>
-<head>
-	<title>Blog</title>
-	<link type='text/css' rel='stylesheet' href='/css/post.css'/>
-    <link type='text/css' rel='stylesheet' href='/css/body.css'/>
-</head>
-<body>
-	{{id}}
+{% extends "base.html" %}
+{% block title %}Post{% endblock %}
+{% block head %}
+    {{ super() }}
+    <link type='text/css' rel='stylesheet' href='/css/post.css'/>
+{% endblock %}
+
+{% block content %}
     <br/>
-    <a href="/blog" id="header-title">Blog by me</a>
+	#{{id}}
 	<div class='title'><h1>{{entry.title}}</h1></div>
 	<pre class='content'>{{entry.content}}</pre>
 	<br>
-</body>
-
-</html>
+{% endblock %}
