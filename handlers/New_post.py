@@ -9,7 +9,7 @@ class New_entry(Handler):
     def get(self):
         username = self.get_username()
         if username:
-            self.render('new_entry.html')
+            self.render('new_post.html')
         else:
             self.redirect('/blog/login')
 
@@ -22,4 +22,4 @@ class New_entry(Handler):
             self.redirect('/blog/id/' + str(e.key().id()))
         else:
             error = 'Fill both title and content'
-            self.render('new_entry.html', title=title, content=content, error=error)
+            self.render('new_post.html', title=title, content=content, error=error)

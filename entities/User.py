@@ -1,5 +1,5 @@
 from google.appengine.ext import db
-import pw
+from utils import pw
 
 __author__ = 'ssav'
 

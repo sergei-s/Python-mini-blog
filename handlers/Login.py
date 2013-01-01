@@ -1,6 +1,6 @@
 from entities.User import User
 from handlers.Handler import Handler
-import pw
+from utils import pw
 
 __author__ = 'ssav'
 
