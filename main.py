@@ -1,4 +1,5 @@
 import webapp2
+from handlers.Flush import Flush
 from handlers.Blog import Blog
 from handlers.Get_post import Get_post
 from handlers.Login import Login
@@ -10,8 +11,9 @@ from handlers.Welcome import Welcome
 app = webapp2.WSGIApplication([('/blog(?:.json)?/?', Blog),
                                ('/blog/newpost/?', New_entry),
                                ('/blog/id/.*/?(?:.json)?', Get_post),
-                               ('/signup/?', Signup),
+                               ('/blog/signup/?', Signup),
                                ('/blog/welcome/?', Welcome),
-                               ('/login/?', Login),
-                               ('/logout/?', Logout)],
+                               ('/blog/login/?', Login),
+                               ('/blog/logout/?', Logout),
+                               ('/blog/flush/?', Flush)],
                                debug=True)

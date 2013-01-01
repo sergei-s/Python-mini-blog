@@ -7,7 +7,11 @@ __author__ = 'ssav'
 
 class New_entry(Handler):
     def get(self):
-        self.render('new_entry.html')
+        username = self.read_secure_cookie('name')
+        if username:
+            self.render('new_entry.html')
+        else:
+            self.redirect('/blog/login')
 
     def post(self):
         title = self.request.get('subject')

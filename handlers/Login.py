@@ -11,7 +11,7 @@ class Login(Handler):
     def post(self):
         username = self.request.get('username')
         password = self.request.get('password')
-        user = User.gql('WHERE username = :username', username=username)
+        user = User.get_by_name(username)
         if user.count() == 0:
             self.display_error()
         else:
