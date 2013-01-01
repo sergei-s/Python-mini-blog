@@ -7,7 +7,8 @@
 
 {% block content %}
 	{% for entry in entries%}
-	<div class='title'><h1><a href="blog/id/{{entry.key().id()}}">{{entry.title}}</a></h1></div>
+	<div class='title'><a href="blog/id/{{entry.key().id()}}" class="post">{{entry.title}}</a></div>
+    <hr class='black'>
 	<pre class='content'>{{entry.content}}</pre>
 	<br>
 	{%endfor%}

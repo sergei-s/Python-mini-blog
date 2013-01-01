@@ -7,7 +7,7 @@ __author__ = 'ssav'
 
 class New_entry(Handler):
     def get(self):
-        username = self.read_secure_cookie('name')
+        username = self.get_username()
         if username:
             self.render('new_entry.html')
         else:

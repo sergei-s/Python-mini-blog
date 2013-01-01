@@ -24,6 +24,7 @@ class Handler(webapp2.RequestHandler):
 
     def render_str(self, template, **params):
         t = jinja_env.get_template(template)
+        params['username'] = self.get_username()
         return t.render(params)
 
     def render(self, template, **kw):
@@ -45,6 +46,9 @@ class Handler(webapp2.RequestHandler):
         secure_val = self.request.cookies.get(name)
         if secure_val:
             return check_secure_val(secure_val)
+
+    def get_username(self):
+        return self.read_secure_cookie('name')
 
     def initialize(self, *a, **kw):
         webapp2.RequestHandler.initialize(self, *a, **kw)

@@ -4,11 +4,20 @@
     {% block head %}
         <link type='text/css' rel='stylesheet' href='/css/base.css'/>
         <title>{% block title %}{% endblock %}</title>
-        <a href="/blog" id="header-title">Blog by me</a>
+        <div id="header-title"><a href="/blog">Blog by me</a></div>
+        <div id="header-actions">
+            {% if username == None%}
+                <a href="/blog/login">Login</a>&nbsp;
+                <a href="/blog/signup">Signup</a>
+            {% else %}
+                <span>Hello, {{username}} </span><a href="/blog/logout">Logout</a>
+            {% endif %}
+        </div>
+        </br>
     {% endblock %}
 </head>
 <body>
     {% block content %}{% endblock %}
-    <p id="footer">{% block footer %}{% endblock %}</p>
+    <div id="footer">{% block footer %}{% endblock %}</div>
 </body>
 </html>

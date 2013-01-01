@@ -1,21 +1,33 @@
 body {
     position: relative;
-    margin: 20 auto;
-    width: 400px;
+    margin: 10 auto;
+    width: 50%;
 }
 
-a#header-title {
+div#header-title {
+    text-align: center;
+}
+
+div#header-title>a {
     font-size: 32;
     font-family: "Courier New";
     text-decoration: none;
     color: #23c9ff;
-    left: 50%;
-    position: relative;
 }
 
-p#footer {
-    left: 100%;
-    position: relative;
-    font-size: 10;
+div#footer, div#header-actions {
+    right: 0;
+    position: absolute;
+}
+
+div#footer, div#header-actions>a,span {
     color: #a9a9a9;
+}
+
+div#footer {
+    font-size: 10;
+}
+
+div#header-actions>a,span {
+    font-size: 12;
 }

@@ -1,3 +1,12 @@
 body {
     font-family: sans-serif;
 }
+
+hr.black {
+    border-color: #23c9ff;
+}
+
+a.post {
+    color: #1e90ff;
+    font-weight: bold;
+}
